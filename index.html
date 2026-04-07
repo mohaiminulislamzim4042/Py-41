@@ -1,4 +1,120 @@
-#1=>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M.I.Zim | Python Logic Calc</title>
+    <style>
+        :root {
+            --bg: #0f172a;
+            --card: #1e293b;
+            --accent: #38bdf8;
+            --text: #f8fafc;
+        }
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .calc-card {
+            background: var(--card);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            width: 350px;
+            border: 1px solid #334155;
+        }
+        h2 { text-align: center; color: var(--accent); margin-bottom: 1.5rem; }
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            background: #0f172a;
+            border: 1px solid #334155;
+            border-radius: 8px;
+            color: white;
+            box-sizing: border-box;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background: var(--accent);
+            border: none;
+            border-radius: 8px;
+            color: #0f172a;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 10px;
+        }
+        button:hover { opacity: 0.9; transform: translateY(-2px); }
+        .result-box {
+            margin-top: 20px;
+            padding: 15px;
+            background: #334155;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        .highlight { color: var(--accent); font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<div class="calc-card">
+    <h2>M.I.Zim Logic Calc</h2>
+    <input type="number" id="num1" placeholder="প্রথম সংখ্যা (Number 1)">
+    <input type="number" id="num2" placeholder="দ্বিতীয় সংখ্যা (Number 2)">
+    
+    <button onclick="calculate()">লজিক রান কর (Run Python Logic)</button>
+
+    <div id="output" class="result-box" style="display: none;">
+        </div>
+</div>
+
+<script>
+    function calculate() {
+        // ১. ইনপুট নেওয়া (Day 1 & 2 এর কনসেপ্ট)
+        const n1 = parseInt(document.getElementById('num1').value);
+        const n2 = parseInt(document.getElementById('num2').value);
+        const output = document.getElementById('output');
+
+        if (isNaN(n1) || isNaN(n2)) {
+            alert("আগে সংখ্যা লিখ ভাই!");
+            return;
+        }
+
+        // ২. অ্যারিথমেটিক অপারেশন (Day 2: Operators) 
+        const sum = n1 + n2;
+        
+        // ৩. মডুলাস অপারেটর (Day 2: Modulo %) 
+        const isEven = (sum % 2 === 0) ? "জোড় (Even)" : "বিজোড় (Odd)";
+
+        // ৪. কন্ডিশনাল লজিক (Day 3: If-Elif-Else) 
+        let status = "";
+        if (sum > 500) {
+            status = "বড়লোক লেভেলের যোগফল!";
+        } else if (sum >= 200 && sum <= 500) {
+            status = "মোটামুটি একটা সংখ্যা।";
+        } else {
+            status = "একদম ছোট সংখ্যা।";
+        }
+
+        // ৫. আউটপুট দেখানো (f-string এর মতো করে)
+        output.style.display = "block";
+        output.innerHTML = `
+            <div>যোগফল: <span class="highlight">${sum}</span></div>
+            <div>এটি একটি <span class="highlight">${isEven}</span> সংখ্যা।</div>
+            <div>মন্তব্য: <span class="highlight">${status}</span></div>
+        `;
+    }
+</script>
+    <!-- #1=>
 # tk=int(input("Koto tk khoroch hoilo: "))
 
 # if tk>500:
@@ -57,3 +173,7 @@ elif action == "out":
         print(f" Withraw {tk} Successfully। : Remaining balance {main_balance}")
 else:
     print("Choise correct option (add/out)")
+ -->
+
+</body>
+</html>
