@@ -19,3 +19,14 @@ try:
 # Lec 11: Error handling
 except Exception:
     print("File-e somossya ba file pawa jayni!")
+
+Rahim,82
+Karim,75
+Manik,88
+Jabbar,92
+Sabbir,65
+Nabil,70
+Siam,85
+Arif,78
+Rafi,89
+Arham,93
