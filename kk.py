@@ -30,3 +30,29 @@ Siam,85
 Arif,78
 Rafi,89
 Arham,93
+
+# import matplotlib.pyplot as plt
+
+# x = [1, 2, 3, 4, 5]
+# y = [10, 20, 15, 30, 25]
+
+# plt.plot(x, y)
+# plt.title("Simple line chart")
+# plt.xlabel("Days")
+# plt.ylabel("Marks")
+# plt.show()
+# import matplotlib.pyplot as plt
+
+# names = ['A', 'B', 'C']
+# marks = [85, 92, 78]
+
+# plt.bar(names, marks)
+# plt.show()
+
+import matplotlib.pyplot as plt
+
+sizes = [40, 30, 30 ]
+labels = ['Python', 'Java', 'C++']
+
+plt.pie(sizes, labels=labels)
+plt.show()
